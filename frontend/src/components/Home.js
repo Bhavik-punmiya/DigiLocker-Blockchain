@@ -1,15 +1,18 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import './css/home.css'
+import { useUserAuth } from './context/userAuthContext';
 
 
 
 
 
 function Home() {
+  const {user} = useUserAuth();
+  console.log(user);
   return (
     <div className='home'>
-        <main className='main'>
+    <main className='main'>
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -24,12 +27,14 @@ function Home() {
         </Link> 
     </div>
       <div className='left-regi-btns'>
-      <Link href="/signup">
+     {!user?( <><a href="/signup">
         <div className='signUp' > Sign Up </div>
-      </Link>
-      <Link href="/login">
+      </a>
+      <a href="/login">
         <div className='logIn'> Log In </div>
-      </Link>  
+      </a></>):( <a href="/login">
+        <div className='logIn'> Log Out </div>
+      </a>)}
       </div>
       <div className='clear'></div>
   </div>    
