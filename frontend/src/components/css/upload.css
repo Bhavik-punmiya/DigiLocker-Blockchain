@@ -1,0 +1,75 @@
+
+.upload{
+    background-image: url('../img/group4.png');
+    height: 100vh;
+    background-color: black;
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+
+.schemes{
+    text-align: center;  
+}
+.titles{
+    padding-left: 50rem;
+}
+.uploadmenu{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    
+}
+.uploadmenu a{
+    color: #fff;
+    text-decoration: none;    
+}
+.leftuploadmenu{
+    display: flex;
+}
+
+.signout-btn{
+    padding:0.6rem 2rem !important;
+    
+    border-radius: 10px !important;
+    border: solid white 1px !important;
+    margin-left: 20px !important;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    padding-top: 7rem;                       
+}
+.container>form>input{
+   margin: 1rem;
+   background-color: black;
+   color: white;
+   padding: 0.5rem;
+}
+.choose-file-btn{
+    background-color: transparent !important;
+}
+.upload-files-btn{
+    padding:0.6rem 2rem !important;
+    margin-top: 10px !important;
+    border-radius: 10px !important;
+    border: solid white 1px !important;
+    margin-left: 20px !important;
+}
+.mainsection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.sideimg img{
+    width: 500px;
+    object-fit: contain;
+
+}
