@@ -2,13 +2,14 @@
 const axios = require('axios')
 const FormData = require('form-data')
 const fs = require('fs')
+require('dotenv').config()
 
-const JWT = 'Your JWT Token'
+const JWT = process.env.JWT_TOKEN;
 
 const UploadIPFS = async () => {
     const formData = new FormData();
-    //E-Certificates/Certificates/BhavikPunmiya.jpg
-    const src = "../E-Certificates/Certificates/C.jpg";
+
+    const src = "../public/Certificates/C.jpg";
     
     const file = fs.createReadStream(src)
     formData.append('file', file)
