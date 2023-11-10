@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './css/upload.css'
 import sideimg from './img/Scene_BluePurpleGold_Link.png'
 import { useUserAuth } from './context/userAuthContext';
+import TextField from '@mui/material/TextField';
 
 function Upload() {
   const {logout}= useUserAuth()
@@ -24,7 +25,7 @@ function Upload() {
     <p className='schemes'> View Schemes </p>
   </Link>
   <div className='leftuploadmenu'>
-  <Link href="/certifcategen">
+  <Link href="/generatecertificate">
     <p className='schemes'> Generate Certificates </p>
   </Link>
   <button className="signout-btn" onClick={handlelogout}>Sign Out</button>
@@ -39,12 +40,8 @@ function Upload() {
        <h1 className="titles">Upload Your Files</h1>
     <div className="container">
             <form action="">
-              <input minLength="3" name="form-name"   id="form-name" type="text" placeholder='Form-Name' required></input><br/>
-                <input minLength="3" name="form-id"   id="form-id" type="text" placeholder='Form-ID' required></input><br/>
-                
+            <TextField id="outlined-basic" label="Form Name" variant="outlined" /><br/>              
                 <input type="file"/>
-                
-               
                 <br/>
                  <button className='button-29'>Submit</button>
                   
