@@ -2,8 +2,15 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './css/upload.css'
 import sideimg from './img/Scene_BluePurpleGold_Link.png'
+import { useUserAuth } from './context/userAuthContext';
 
 function Upload() {
+  const {logout}= useUserAuth()
+  const handlelogout=async ()=>{
+    await logout();
+    await localStorage.removeItem('auth')
+ }
+
   return (
     <div className='upload'>
 <head>
@@ -20,7 +27,7 @@ function Upload() {
   <Link href="/certifcategen">
     <p className='schemes'> Generate Certificates </p>
   </Link>
-  <button className="signout-btn" onClick={''}>Sign Out</button>
+  <button className="signout-btn" onClick={handlelogout}>Sign Out</button>
   </div>
 </div>
 
