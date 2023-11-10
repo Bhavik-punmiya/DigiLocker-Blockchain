@@ -15,9 +15,10 @@ function Login() {
   const handlesubmit = async(e)=>{
     e.preventDefault();
     try{
-     await login(email,password);
-     console.log('user successfully created');
+    const res = await login(email,password);
+     console.log('user successfully Logined');
      setError('');
+     localStorage.setItem('auth',JSON.stringify(res.data))
      navigate('/');
      
     }catch(err){
@@ -27,8 +28,9 @@ function Login() {
   const handlegooglesignin = async(e)=>{
     e.preventDefault();
     try{
-     await googlesignin();
+     const res= await googlesignin();
      console.log('user successfully created');
+     await localStorage.setItem('auth',JSON.stringify(res.data))
      setError('');
      navigate('/');
     }catch(err){

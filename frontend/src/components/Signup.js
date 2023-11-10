@@ -18,11 +18,12 @@ function Signup() {
   const handlesubmit = async(e)=>{
     e.preventDefault();
     try{
-     await signup(email,password);
-     
+     const res = await signup(email,password);
+     await localStorage.setItem('auth',JSON.stringify(res.data))
      console.log('user successfully created');
      setError('');
      navigate('/');
+     
      
     }catch(err){
       setError(err.message);
@@ -32,7 +33,8 @@ function Signup() {
   const handlegooglesignin = async(e)=>{
     e.preventDefault();
     try{
-     await googlesignin();
+     const res = await googlesignin();
+     localStorage.setItem('auth',JSON.stringify(res.data))
      console.log('user successfully created');
      setError('');
      navigate('/');

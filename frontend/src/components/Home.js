@@ -8,8 +8,13 @@ import { useUserAuth } from './context/userAuthContext';
 
 
 function Home() {
-  const {user} = useUserAuth();
+  const {user,logout} = useUserAuth();
   console.log(user);
+
+  const handlelogout=async ()=>{
+     await logout();
+     await localStorage.removeItem('auth')
+  }
   return (
     <div className='home'>
     <main className='main'>
@@ -33,7 +38,7 @@ function Home() {
       <a href="/login">
         <div className='logIn'> Log In </div>
       </a></>):( <a href="/login">
-        <div className='logIn'> Log Out </div>
+        <div className='logIn' onClick={handlelogout}> Log Out </div>
       </a>)}
       </div>
       <div className='clear'></div>

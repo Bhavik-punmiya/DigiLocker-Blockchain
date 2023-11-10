@@ -20,7 +20,8 @@ import Signup from './components/Signup';
 function App() {
 
   const {user}= useUserAuth();
-
+   console.log(user)
+   const auth = localStorage.getItem('auth')
 
   return (
     <div className="App">
@@ -29,9 +30,9 @@ function App() {
       {/* <Upload/> */}
       <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/upload' element={!(user)?(<Upload/>):(<Navigate to='/login'/>)}/>
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>}/>
+          <Route path='/upload' element={!(user || auth)?(<Navigate to='/login'/>):(<Upload/>)}/>
       </Routes>
     </div>
   );
