@@ -8,24 +8,16 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import scheme from './components/scheme';
 import Certifcategenerator from './components/Certifcategenerator';
 import Myfiles from './components/Myfiles';
+
 
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },
 });
-
-
-
-
-
-
-
-
-
-
 
 function App() {
 
@@ -40,6 +32,7 @@ function App() {
       <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/login' element={<Login/>} />
+          <Route path='/scheme' element={<scheme/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/upload' element={!(user || auth)?(<Navigate to='/login'/>):(<Upload/>)}/>
           <Route path='/generatecertificate' element={<Certifcategenerator/>}/>
