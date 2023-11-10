@@ -36,7 +36,7 @@
     border: solid white 1px !important;
     margin-left: 20px !important;
 }
-.container{
+.upload .container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +83,7 @@ input[type=file]::file-selector-button {
 }
 
 
- .container{
+ .upload .container{
     border: 3px dashed #fff;
     padding: 20px;
     border-radius: 20px;

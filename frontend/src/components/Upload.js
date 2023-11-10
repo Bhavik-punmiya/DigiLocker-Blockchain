@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './css/upload.css'
 import sideimg from './img/Scene_BluePurpleGold_Link.png'
 import { useUserAuth } from './context/userAuthContext';
 import TextField from '@mui/material/TextField';
+
 
 function Upload() {
   const {logout}= useUserAuth()
@@ -11,6 +12,7 @@ function Upload() {
     await logout();
     await localStorage.removeItem('auth')
  }
+ const navigate= useNavigate()
 
   return (
     <div className='upload'>
@@ -45,7 +47,7 @@ function Upload() {
                 <br/>
                  <button className='button-29'>Submit</button>
                   
-                 <button className='button-29'>View Documents</button>
+                 <button className='button-29' onClick={(e)=>navigate('/myfiles')}>View Documents</button>
             </form>
            
     </div> 

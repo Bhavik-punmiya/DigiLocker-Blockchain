@@ -9,6 +9,7 @@ import Signup from './components/Signup';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Certifcategenerator from './components/Certifcategenerator';
+import Myfiles from './components/Myfiles';
 
 const darkTheme = createTheme({
   palette: {
@@ -36,18 +37,14 @@ function App() {
     <div className="App">
       <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      
-   
-      {/* <Home/> */}
-      {/* <Upload/> */}
       <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/login' element={<Login/>} />
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/upload' element={!(user || auth)?(<Navigate to='/login'/>):(<Upload/>)}/>
           <Route path='/generatecertificate' element={<Certifcategenerator/>}/>
-      </Routes>
-        
+          <Route path='/myfiles' element={<Myfiles/>}/>
+      </Routes>   
       </ThemeProvider>
     </div>
   );
