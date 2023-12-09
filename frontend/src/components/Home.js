@@ -27,9 +27,12 @@ function Home() {
 <section>
   <div className='button-container'>
     <div className='right-regi-btns'>
-         <Link href="/schemes">
+         <a href="/scheme">
           <div className='schemes' > View Schemes </div>
-        </Link> 
+        </a> 
+        <a href="/myfiles">
+          <div className='schemes' > My Files </div>
+        </a> 
     </div>
       <div className='left-regi-btns'>
      {!user?( <><a href="/signup">

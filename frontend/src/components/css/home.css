@@ -8,6 +8,7 @@ section{
    margin: 10px;
   }
   .right-regi-btns{
+    display: flex;
     float: left;
   }
   .home{
